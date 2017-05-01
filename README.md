@@ -1,24 +1,17 @@
-# README
+# Coaxial
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Coaxial is a chat app using `ActionCable` and `React.js`, with user authentication via GitHub OmniAuth. To get it up and running locally:
 
-Things you may want to cover:
+```bash
+$ git clone git@github.com:enthusiastick/coaxial.git
+$ bundle install
+$ rails server
+```
 
-* Ruby version
+And then, in a separate terminal tab:
 
-* System dependencies
+```bash
+$ ./bin/webpack-dev-server
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You will also need to have a running Redis on your system (e.g. `brew install redis`.)
