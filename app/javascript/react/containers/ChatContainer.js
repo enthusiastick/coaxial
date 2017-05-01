@@ -25,7 +25,11 @@ class ChatContainer extends Component {
   }
 
   handleChatReceipt(chat) {
+    let key = (new Date).getTime()
+    chat = Object.assign(chat, { key: key })
     this.setState({ chats: this.state.chats.concat(chat) })
+    let chatWindow = document.getElementById('chatWindow');
+    chatWindow.scrollTop = chatWindow.scrollHeight;
   }
 
   handleClearForm() {
@@ -59,17 +63,17 @@ class ChatContainer extends Component {
   }
 
   render() {
-    let key;
     let chats = this.state.chats.map(chat => {
-      key = (new Date).getTime()
       return(
-        <ChatMessage key={key} handle={chat.handle} message={chat.message} />
+        <ChatMessage key={chat.key} handle={chat.handle} message={chat.message} />
       )
     });
 
     return(
       <div>
-        {chats}
+        <div className='chat' id='chatWindow'>
+          {chats}
+        </div>
         <form onSubmit={this.handleFormSubmit}>
           <TextField
             content={this.state.message}
