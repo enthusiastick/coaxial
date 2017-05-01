@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChatMessage from '../components/ChatMessage';
 import TextField from '../components/TextField';
+import SignOut from '../components/SignOut';
 
 class ChatContainer extends Component {
   constructor(props) {
@@ -83,6 +84,7 @@ class ChatContainer extends Component {
           />
           <input type='submit' value='Chat'/>
         </form>
+        <SignOut />
       </div>
     );
   }

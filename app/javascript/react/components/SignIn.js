@@ -2,7 +2,7 @@ import React from 'react';
 
 const SignIn = () => {
   return(
-    <a href="/auth/github">Sign In</a>
+    <a href='/auth/github'>Sign In</a>
   );
 };
 
