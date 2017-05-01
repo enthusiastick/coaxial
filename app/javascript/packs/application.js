@@ -1,10 +1,12 @@
 import 'whatwg-fetch';
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory'
+import { BrowserRouter } from 'react-router-dom'
 
-import HelloReact from './hello_react';
+import Chat from '../react/components/Chat';
+import SignIn from '../react/components/SignIn';
 
 const history = createBrowserHistory();
 
@@ -12,9 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let reactElement = document.getElementById('react-app');
   if (reactElement) {
     ReactDOM.render(
-       <Router history={history}>
-        <Route path='/' component={HelloReact} />
-       </Router>,
+       <BrowserRouter history={history}>
+        <Switch>
+          <Route exact path='/' component={SignIn} />
+          <Route path='/chat' component={Chat} />
+        </Switch>
+       </BrowserRouter>,
       reactElement
     );
   }
