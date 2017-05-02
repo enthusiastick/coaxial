@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ChatMessage from '../components/ChatMessage';
-import TextField from '../components/TextField';
+import TextFieldWithSubmit from '../components/TextFieldWithSubmit';
 import SignOut from '../components/SignOut';
 
 class ChatContainer extends Component {
@@ -70,19 +70,17 @@ class ChatContainer extends Component {
 
     return(
       <div>
-        <div className='chat' id='chatWindow'>
+        <SignOut />
+        <div className='callout chat' id='chatWindow'>
           {chats}
         </div>
         <form onSubmit={this.handleFormSubmit}>
-          <TextField
+          <TextFieldWithSubmit
             content={this.state.message}
-            label='Message'
             name='message'
             handlerFunction={this.handleMessageChange}
           />
-          <input type='submit' value='Chat'/>
         </form>
-        <SignOut />
       </div>
     );
   }

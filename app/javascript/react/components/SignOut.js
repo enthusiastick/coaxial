@@ -2,7 +2,9 @@ import React from 'react';
 
 const SignOut = () => {
   return(
-     <a className='float-right' data-method='delete' href='sign-out'>Sign out</a>
+    <div className='text-right'>
+      <a data-method='delete' href='sign-out'>Sign out</a>
+    </div>
   );
 };
 
