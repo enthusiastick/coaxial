@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     user.touch(:last_signed_in_at)
     user.increment! :sign_in_count
     session[:user_id] = user.id
-    ActionCable.server.broadcast "chat_channel", message: "#{user.handle} has signed in.", handle: "Coaxial System Message", key: "#{Time.now.to_formatted_s(:number)}-0"
+    ActionCable.server.broadcast "chat_channel", message: "#{user.handle} has signed in.", handle: "Coaxial System Message", key: "#{Time.now.to_datetime.strftime('%Q')}-0"
   end
 
   def sign_out
