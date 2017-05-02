@@ -2,7 +2,9 @@ import React from 'react';
 
 const SignIn = () => {
   return(
-    <a href='/auth/github'>Sign In</a>
+    <div className='text-center'>
+      <a className='button large' href='/auth/github'>Sign In</a>
+    </div>
   );
 };
 
