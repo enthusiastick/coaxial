@@ -26,8 +26,6 @@ class ChatContainer extends Component {
   }
 
   handleChatReceipt(chat) {
-    let key = (new Date).getTime()
-    chat = Object.assign(chat, { key: key })
     this.setState({ chats: this.state.chats.concat(chat) })
     let chatWindow = document.getElementById('chatWindow');
     chatWindow.scrollTop = chatWindow.scrollHeight;
