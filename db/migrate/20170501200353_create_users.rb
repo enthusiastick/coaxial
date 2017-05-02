@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
+      t.string :color, null: false
       t.integer :github_id
       t.string :handle
       t.datetime :last_signed_in_at
