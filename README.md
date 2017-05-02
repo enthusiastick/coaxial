@@ -1,10 +1,12 @@
 # Coaxial
 
-Coaxial is a chat app using `ActionCable` and `React.js`, with user authentication via GitHub OmniAuth. To get it up and running locally:
+Coaxial is a chat app using `ActionCable` and `React.js`, with user authentication via GitHub OmniAuth (you'll need application keys, as referenced in the `.env.example` file.) To get it up and running locally:
 
 ```bash
 $ git clone git@github.com:enthusiastick/coaxial.git
 $ bundle install
+$ rake db:create
+$ rake db:migrate
 $ rails server
 ```
 
