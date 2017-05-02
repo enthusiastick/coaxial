@@ -1,9 +1,10 @@
 import React from 'react';
 
-const ChatMessage = ({ handle, message }) => {
+const ChatMessage = ({ color, handle, message }) => {
+  const colorStyle = { color: color }
   return(
     <p>
-      <strong>{handle}: </strong>
+      <strong style={colorStyle}>{handle}: </strong>
       {message}
     </p>
   );

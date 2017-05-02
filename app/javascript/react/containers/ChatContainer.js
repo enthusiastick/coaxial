@@ -64,7 +64,12 @@ class ChatContainer extends Component {
   render() {
     let chats = this.state.chats.map(chat => {
       return(
-        <ChatMessage key={chat.key} handle={chat.handle} message={chat.message} />
+        <ChatMessage
+          key={chat.key}
+          color={chat.color}
+          handle={chat.handle}
+          message={chat.message}
+        />
       )
     });
 
